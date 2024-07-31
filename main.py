@@ -81,14 +81,12 @@ with st.form(key='message_form'):
     next_button = st.form_submit_button("अर्को सन्देश")
     st.markdown("</div>", unsafe_allow_html=True)
 
-
+# Display the special message title
 st.markdown("<h2 style='text-align: center;'>🌟 विशेष सन्देश: मम्मा, तपाईको ममता असीमित छ 🌟</h2>", unsafe_allow_html=True)
-
 
 # Handle the "Next" button click
 if next_button:
     st.session_state.message_index = (st.session_state.message_index + 1) % len(messages)
-    # st.experimental_rerun()  # Comment this out if not using
 
 # Container for the video
 with st.container():
@@ -109,14 +107,14 @@ with st.container():
     # Center the "Next" button for video
     if st.button("अर्को भिडियो"):
         st.session_state.video_index = (st.session_state.video_index + 1) % len(videos)
- 
- # Short message to be spoken by AI
+
+# Short message to be spoken by AI
 short_message = "मामु, तपाई मेरो जीवनको अनमोल रत्न हुनुहुन्छ। तपाईको ममता र स्नेहले मेरो जीवनलाई अर्थपूर्ण बनाएको छ।"
 audio_file_url = "message_to_mamu.mp3"
 
 # Display the TTS message after the video
 st.markdown(f"""
-    <div id="tts-message" style="display:none; text-align: center;">
+    <div id="tts-message" style="text-align: center;">
         <h3>📢 {short_message} 📢</h3>
         <audio controls>
             <source src="{audio_file_url}" type="audio/mpeg">
