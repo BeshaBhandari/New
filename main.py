@@ -104,17 +104,4 @@ with st.container():
     if st.button("अर्को भिडियो"):
         st.session_state.video_index = (st.session_state.video_index + 1) % len(videos)
 
-# Short message to be spoken by AI
-short_message = "मामु, तपाई मेरो जीवनको अनमोल रत्न हुनुहुन्छ। तपाईको ममता र स्नेहले मेरो जीवनलाई अर्थपूर्ण बनाएको छ।"
-audio_file_url = "message_to_mamu.mp3"
 
-# Display the TTS message after the video
-st.markdown(f"""
-    <div id="tts-message" style="text-align: center;">
-        <h3>📢 {short_message} 📢</h3>
-        <audio controls>
-            <source src="{audio_file_url}" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-""", unsafe_allow_html=True)
